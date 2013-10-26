@@ -3,8 +3,8 @@ all: main
 run: main
 	./main
 
-install: /usr/shared/lga/lga.lds /usr/include/lga.h
-/usr/shared/lga/lga.lds: lga.lds
+install: /usr/share/lga/lga.lds /usr/include/lga.h
+/usr/share/lga/lga.lds: lga.lds
 	install -g root -o root -DT -m 644 $^ $@
 /usr/include/lga.h: lga.h
 	install -g root -o root -DT -m 644 $^ $@
