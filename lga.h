@@ -84,7 +84,10 @@
 */
 #define _lga_get_array(type, array_name, variable_name) \
 	static char __lga_##variable_name[0] __lga_attrib(#array_name"_1"); \
-	type *variable_name = &__lga_##variable_name;
+	type *variable_name = (type*)&__lga_##variable_name;
+#define _lga_get_array_static(type, array_name, variable_name) \
+	static char __lga_##variable_name[0] __lga_attrib(#array_name"_1"); \
+	static type *variable_name = (type*)&__lga_##variable_name;
 
 /* lga_get_element(type, array_name, element_name)
 
