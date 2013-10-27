@@ -20,7 +20,8 @@
 /* lga_el(type, array_name, element_name)
 
    is used to declare a linker-generated array element
-   this macro will declare the variable for you, and you can later retrieve the specific element
+   this macro will declare the variable for you
+   you can retrieve the specific element using lga_get_element() later
 
    example usage:
      lga_el(type, numbers, special_number) = 12;
@@ -31,7 +32,8 @@
 /* _lga_el(array_name)
 
    is used to TAG a variable as a member of a linker-generated array
-   this marco will not declare the variable for you, and you can't retrieve a specific element later
+   this marco will not declare the variable for you
+   you can't retrieve the specific element later
 
    example usage:
      int myInt _lga_el(numbers) = 10;
