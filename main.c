@@ -5,11 +5,11 @@
 
 int unnamed _lga_el(numbers) = 8;
 
-lga_el(int, numbers, five)       = 5;
-lga_el(int, numbers, ten)        = 10;
-lga_el(int, numbers, fifteen)    = 15;
-lga_el(int, numbers, twenty)     = 20;
-lga_el(int, numbers, twentyfive) = 25;
+lga_el(int, numbers, 005_five)       = 5;
+lga_el(int, numbers, 010_ten)        = 10;
+lga_el(int, numbers, 015_fifteen)    = 15;
+lga_el(int, numbers, 020_twenty)     = 20;
+lga_el(int, numbers, 025_twentyfive) = 25;
 
 int main(int argc, char *argv[]) {
 	int *numbers = lga_get_array(numbers);
@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
 	size_t numbers_size = lga_get_array_size(numbers);
 	size_t numbers_len = lga_get_array_length(int, numbers);
 
-	int *num_fifteen = lga_get_element(int, numbers, fifteen);
+	int *num_fifteen = lga_get_element(int, numbers, 015_fifteen);
 
 	int i;
 
