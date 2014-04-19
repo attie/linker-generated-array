@@ -103,7 +103,7 @@
 		(type *)&_lga_##array_name##_##element_name; \
 	})
 
-/* lga_get_array_end(type, array_name)
+/* lga_get_array_end(array_name)
 
    is used to retrieve the address of the end of an array
    the pointer should not be dereferenced, but may be used for comparison
