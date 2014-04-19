@@ -135,7 +135,7 @@
 		size; \
 	})
 
-/* lga_get_array_lenght(type, array_name)
+/* lga_get_array_length(type, array_name)
 
    is used to determine the number of elements in an array
 
