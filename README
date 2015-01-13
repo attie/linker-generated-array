@@ -1,0 +1,4 @@
+Linker Generated Arrays make use of linker scripts...
+If your version of ld (for example 2.17) doesn't support the INSERT BEFORE command, then you'll have to manually modify the script.
+Extract the script using $(CROSS_COMPILE)ld --verbose
+An example has been provided (lga_ppc.lds)
