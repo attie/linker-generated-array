@@ -34,9 +34,9 @@
      lga_el(type, numbers, special_number) = 12;
 */
 #define lga_el(type, array_name, element_name) \
-	type _lga_##array_name##_##element_name __lga_attrib(#array_name"_2_"#element_name)
+	type _lga_##array_name##_##element_name __lga_attrib(array_name##_2_##element_name)
 #define lga_terminator(type, array_name, element_name) \
-	type _lga_##array_name##_##element_name __lga_attrib(#array_name"_3_"#element_name)
+	type _lga_##array_name##_##element_name __lga_attrib(array_name##_3_##element_name)
 
 /* _lga_el(array_name)
    _lga_terminator(array_name)
@@ -51,9 +51,9 @@
      int myInt _lga_el(numbers) = 10;
 */
 #define _lga_el(array_name) \
-	__lga_attrib(#array_name"_2")
+	__lga_attrib(array_name##_2)
 #define _lga_terminator(array_name) \
-	__lga_attrib(#array_name"_3")
+	__lga_attrib(array_name##_3)
 
 /* lga_get_array(array_name)
 
@@ -66,7 +66,7 @@
 */
 #define lga_get_array(array_name) \
 	({ \
-		static char a[0] __lga_attrib(#array_name"_1"); \
+		static char a[0] __lga_attrib(array_name##_1); \
 		(void*)&a; \
 	})
 
@@ -83,10 +83,10 @@
      }
 */
 #define _lga_get_array(type, array_name, variable_name) \
-	static char __lga_##variable_name[0] __lga_attrib(#array_name"_1"); \
+	static char __lga_##variable_name[0] __lga_attrib(array_name##_1); \
 	type *variable_name = (type*)&__lga_##variable_name;
 #define _lga_get_array_static(type, array_name, variable_name) \
-	static char __lga_##variable_name[0] __lga_attrib(#array_name"_1"); \
+	static char __lga_##variable_name[0] __lga_attrib(array_name##_1); \
 	static type *variable_name = (type*)&__lga_##variable_name;
 
 /* lga_get_element(type, array_name, element_name)
@@ -116,7 +116,7 @@
 */
 #define lga_get_array_end(array_name) \
 	({ \
-		static char a[0] __lga_attrib(#array_name"_4"); \
+		static char a[0] __lga_attrib(array_name##_4); \
 		(void*)&a; \
 	})
 
