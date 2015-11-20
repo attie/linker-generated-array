@@ -12,7 +12,7 @@
           .lga : {
             KEEP(*(SORT(.lga_*)));
           }
-	        __lga_end = .;
+          __lga_end = .;
         }
         INSERT BEFORE .bss;
 */
